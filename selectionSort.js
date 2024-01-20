@@ -1,15 +1,12 @@
 const maisBarato = require('./maisBarato');
-const livros = require('./listaLivros')
+const livros = require('./listaLivros');
+const troca = require('./trocaPosicao');
 
 for (let atual = 0; atual < livros.length; atual++) {
     let menorPreco = maisBarato(livros, atual)
 
-    let livroAtual = livros[atual];
-    let livroMenorPreco = livros[menorPreco];
-
-    livros[atual] = livroMenorPreco;
-    livros[menorPreco] = livroAtual;
-
+    troca(livros, atual, menorPreco)
+    
 }
 
 console.log(livros)
